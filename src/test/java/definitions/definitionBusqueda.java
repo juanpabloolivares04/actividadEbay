@@ -1,30 +1,36 @@
 package definitions;
 
-import io.cucumber.java.es.Cuando;
-import io.cucumber.java.es.Dado;
-import io.cucumber.java.es.Entonces;
+import cucumber.api.java.es.Cuando;
+import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Entonces;
+import net.thucydides.core.annotations.Steps;
+import steps.stepsBusqueda;
 
 public class definitionBusqueda {
+    @Steps
+    stepsBusqueda objstepsBusqueda;
 
-    @Dado("que se requiere buscar inventario de tenis adidas")
-    public void que_se_requiere_buscar() {
-
-    }
-    @Cuando("se busque por la palabra {string}")
-    public void se_busque_por_la_palabra(String string) {
-
-    }
-    @Cuando("filtre por {string}")
-    public void filtre_por(String string) {
+    @Dado("^que se requiere buscar inventario de tenis adidas$")
+    public void que_se_requiere_buscar_inventario_de_tenis_adidas() {
+        objstepsBusqueda.ingresoNavegador();
 
     }
-    @Entonces("se debe mostrar el numero de zapatos disponibles con el filtro aplicado")
+
+
+    @Cuando("^se busque por la palabra \"([^\"]*)\"$")
+    public void se_busque_por_la_palabra(String shoes) {
+        objstepsBusqueda.busqueda(shoes);
+    }
+
+    @Cuando("^filtre por \"([^\"]*)\"$")
+    public void filtre_por(String arg1) {
+        objstepsBusqueda.seleccion();
+    }
+
+    @Entonces("^se debe mostrar el numero de zapatos disponibles con el filtro aplicado$")
     public void se_debe_mostrar_el_numero_de_zapatos_disponibles_con_el_filtro_aplicado() {
-
+        objstepsBusqueda.validacion();
     }
-
-
-
 
 
 

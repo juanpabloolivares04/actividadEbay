@@ -1,5 +1,6 @@
 #language: es
   Característica: Realizar una busqueda en la pagina ebay
+
     Escenario: Busqueda Ebay
       Dado que se requiere buscar inventario de tenis adidas
       Cuando se busque por la palabra "shoes"
