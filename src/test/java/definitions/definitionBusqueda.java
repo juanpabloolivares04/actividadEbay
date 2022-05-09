@@ -16,14 +16,13 @@ public class definitionBusqueda {
 
     }
 
-
     @Cuando("^se busque por la palabra \"([^\"]*)\"$")
     public void se_busque_por_la_palabra(String shoes) {
         objstepsBusqueda.busqueda(shoes);
     }
 
-    @Cuando("^filtre por \"([^\"]*)\"$")
-    public void filtre_por(String arg1) {
+    @Cuando("^filtre por adidas$")
+    public void filtre_por_adidas() {
         objstepsBusqueda.seleccion();
     }
 
@@ -32,7 +31,6 @@ public class definitionBusqueda {
         objstepsBusqueda.validacion();
         objstepsBusqueda.cierreNavegador();
     }
-
 
 
 }
