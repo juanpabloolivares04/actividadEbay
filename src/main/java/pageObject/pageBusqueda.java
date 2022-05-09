@@ -4,6 +4,7 @@ package pageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
 import net.thucydides.core.pages.PageObject;
+import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +33,7 @@ public class pageBusqueda extends PageObject {
     @WhenPageOpens
     //Metodo abre el navegador y lo maximiza
     public void maxPantalla() {
-        // getDriver().quit();
+
         getDriver().manage().timeouts().implicitlyWait(11, TimeUnit.SECONDS);
         getDriver().manage().window().maximize();
 
@@ -50,9 +51,16 @@ public class pageBusqueda extends PageObject {
     }
 
     public void validacionInventario() {
+
        String Total= find(By.xpath(txtTotalSearch)).getText();
-        System.out.println(Total);
+        System.out.println("Se encontraron "+Total+" resultados");
+        int tol = Integer.parseInt(Total);
+
+
     }
 
+    public void cierreNavegador(){
+         getDriver().quit();
+    }
 
 }

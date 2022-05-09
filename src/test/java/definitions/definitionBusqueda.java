@@ -30,6 +30,7 @@ public class definitionBusqueda {
     @Entonces("^se debe mostrar el numero de zapatos disponibles con el filtro aplicado$")
     public void se_debe_mostrar_el_numero_de_zapatos_disponibles_con_el_filtro_aplicado() {
         objstepsBusqueda.validacion();
+        objstepsBusqueda.cierreNavegador();
     }
 
 

@@ -29,4 +29,9 @@ objpageBusqueda.maxPantalla();
         objpageBusqueda.validacionInventario();
     }
 
+    @Step
+    public void cierreNavegador(){
+    objpageBusqueda.cierreNavegador();
+    }
+
 }
